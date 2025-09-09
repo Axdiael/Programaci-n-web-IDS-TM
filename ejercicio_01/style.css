@@ -1,0 +1,104 @@
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: #f5f5f5;
+}
+
+header {
+    background: #d4001c;
+    color: white;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    background: #333;
+}
+
+p {
+    color: rgb(218, 165, 32); 
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.texto-resaltado {
+    color: #d4001c;
+    font-weight: bold;
+    text-decoration: underline;
+    background-color: #ffe5e5;
+    border-radius: 5px;
+
+}
+
+.fondo-gris {
+    background-color: #f1f1f1;
+}
+
+.borde-rojo {
+    border: 3px dashed #d4001c;
+    border-radius: 10px;
+}
+
+#contacto {
+    background: #f1f1f1;
+    border-top: 3px solid #d4001c;
+}
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+    background: white;
+}
+
+th, td {
+    border: 1px solid #444; /*este es el color de divisiones de la tabla*/
+    text-align: center;
+}
+
+th {
+    background: #d4001c; /*colores de la tabka*/
+    color: white;
+}
+
+form {
+    background: white;
+    border: 2px solid #d4001c;
+}
+
+input, textarea, select, button {
+    width: 100%;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+button {
+    background: #d4001c;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #b30018;
+}
+
+img {
+    border: 5px solid #d4001c;
+    border-radius: 15px;
+}
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+}
