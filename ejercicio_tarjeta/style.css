@@ -1,0 +1,52 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.tarjeta {
+    width: 300px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: -10px 5px 10px lightgray;
+    margin: 20px auto;
+    overflow: hidden;
+    text-align: center;
+}
+
+.tarjeta-img {
+    width: 100%;
+    height: auto;
+}
+.tarjeta-contenido {
+    padding: 15px;
+}
+
+.tarjeta-titulo {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.tarjeta-descripcion {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.tarjeta-boton {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.tarjeta-boton:hover {
+    background: #0056b3;
+}
