@@ -1,0 +1,86 @@
+@font-face {
+    font-family: "Oswald";
+    src: url("fuentes/Oswald-Regular.ttf");
+}
+@font-face {
+    font-family: "Oswald-Bold";
+    src: url("fuentes/Oswald-Bold.ttf");
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Lato";
+    src: url("fuentes/Lato-Regular.ttf");
+}
+@font-face {
+    font-family: "Lato-Bold";
+    src: url("fuentes/Lato-Bold.ttf");
+    font-weight: bold;
+}
+
+body {
+    margin: 0;
+    font-family: "Lato", sans-serif;
+    background: #F5F5F5;
+    color: #333333;
+}
+.logo-num {
+    font-family: "Oswald", sans-serif;
+    font-size: 28px;
+    color: #F5F5F5; 
+    background: #FF6600; 
+    padding: 2px 6px;
+
+}
+
+.logo-title {
+    font-family: "Oswald", sans-serif;
+    font-size: 28px;
+    color: #FF6600; 
+    margin-left: 4px;
+}
+
+header {
+    background: #333333; 
+    color: #F5F5F5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+header .logo img {
+    width: 65px;
+    height: auto;
+}
+header .logo h1 {
+    font-family: "Oswald-Bold";
+    font-size: 32px;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+nav a {
+    color: #F5F5F5;
+    text-decoration: none;
+    font-family: "Oswald";
+    font-weight: bold;
+    text-transform: uppercase;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+
