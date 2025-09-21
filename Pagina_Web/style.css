@@ -84,3 +84,102 @@ nav a:hover {
     text-decoration: underline;
 }
 
+#contacto {
+    padding: 40px;
+    max-width: 700px;
+    margin: 40px auto;
+    background: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+#contacto h2 {
+    font-family: "Oswald", sans-serif;
+    font-size: 28px;
+    color: #FF6600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+#contacto form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#contacto legend {
+    font-family: "Oswald-Bold";
+    font-size: 20px;
+    color: #333333;
+    margin-bottom: 15px;
+}
+
+#contacto label {
+    font-family: "Lato-Bold";
+    font-size: 16px;
+    color: #333333;
+    margin-bottom: 5px;
+}
+
+#contacto input,
+#contacto textarea,
+#contacto select {
+    font-family: "Lato", sans-serif;
+    font-size: 15px;
+    padding: 12px;
+    border: 1px solid #CCC;
+    border-radius: 6px;
+    background: #F9F9F9;
+    color: #333333;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#contacto input:focus,
+#contacto textarea:focus,
+#contacto select:focus {
+    border-color: #FF6600;
+    outline: none;
+    background: #FFF;
+    box-shadow: 0 0 6px rgba(255,102,0,0.4);
+}
+
+#contacto button {
+    background: #FF6600;
+    color: #FFF;
+    font-family: "Oswald-Bold";
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#contacto button:hover {
+    background: #E55A00;
+}
+
+input:focus, textarea:focus {
+  border: 2px solid orange;
+  outline: none;
+  background-color: #fffbea;
+}
+
+button:hover {
+  background-color: darkorange;
+  cursor: pointer;
+}
+
+input::placeholder, textarea::placeholder {
+  color: gray;
+  font-style: italic;
+}
+
+
+label::after {
+  content: " *";
+  color: red;
+}
