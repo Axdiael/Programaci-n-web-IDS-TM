@@ -1,3 +1,32 @@
+:root {
+    --color-primario: #FF6600;
+    --color-primario-hover: #E55A00;
+    --color-blanco: #FFFFFF;
+    --color-negro: #333333;
+    --color-gris-claro: #F5F5F5;
+    --color-gris-medio: #CCC;
+    --color-gris-oscuro: #666666;
+
+    --fuente-titulo: "Oswald", sans-serif;
+    --fuente-titulo-bold: "Oswald-Bold", sans-serif;
+    --fuente-texto: "Lato", sans-serif;
+    --fuente-texto-bold: "Lato-Bold", sans-serif;
+
+    --padding-general: 15px;
+    --margen-general: 20px;
+
+    --radio-borde: 8px;
+    --radio-borde-grande: 12px;
+
+    --sombra-tarjeta: -10px 5px 10px lightgray;
+    --sombra-general: 0 4px 12px rgba(0,0,0,0.15);
+    --sombra-hover: 0 0 6px rgba(255,102,0,0.4);
+
+    --font-size-logo: clamp(20px, 2vw, 28px);
+    --font-size-titulo: clamp(24px, 2.5vw, 32px);
+    --font-size-boton: clamp(14px, 2vw, 18px);
+}
+
 @font-face {
     font-family: "Oswald";
     src: url("fuentes/Oswald-Regular.ttf");
@@ -18,28 +47,27 @@
 }
 
 .logo-num {
-    font-family: "Oswald", sans-serif;
-    font-size: 28px;
-    color: #F5F5F5; 
-    background: #FF6600; 
-    padding: 2px 6px;
-
+    font-family: var(--fuente-titulo);
+    font-size: var(--font-size-logo);
+    color: var(--color-gris-claro); 
+    background: var(--color-primario); 
+    padding: calc(var(--padding-general) / 5) calc(var(--padding-general) / 2);
 }
 
 .logo-title {
-    font-family: "Oswald", sans-serif;
-    font-size: 28px;
-    color: #FF6600; 
+    font-family: var(--fuente-titulo);
+    font-size: var(--font-size-logo);
+    color: var(--color-primario); 
     margin-left: 4px;
 }
 
 header {
-    background: #333333; 
-    color: #F5F5F5;
+    background: var(--color-negro); 
+    color: var(--color-gris-claro);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 40px;
+    padding: calc(var(--padding-general) * 1) calc(var(--padding-general) * 2.5);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -55,8 +83,8 @@ header .logo img {
     height: auto;
 }
 header .logo h1 {
-    font-family: "Oswald-Bold";
-    font-size: 32px;
+    font-family: var(--fuente-titulo-bold);
+    font-size: var(--font-size-titulo);
     margin: 0;
 }
 
@@ -67,52 +95,13 @@ nav ul {
     margin: 0;
     padding: 0;
 }
-
 nav ul li {
     position: relative;
 }
-
-.desplegable {
-    display: none;
-    position: absolute;
-    top: 100%; 
-    left: 0;
-    background: #333;
-    list-style: none;
-    padding: 10px 0;
-    margin: 0;
-    min-width: 150px;
-    border-radius: 6px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    z-index: 999;
-}
-
-.desplegable li {
-    padding: 5px 15px;
-}
-
-.desplegable li a {
-    color: #F5F5F5;
-    text-decoration: none;
-    display: block;
-    font-family: "Oswald";
-}
-
-.desplegable li a:hover {
-    background: #FF6600;
-    color: #fff;
-    border-radius: 4px;
-}
-
-nav ul li:hover > .desplegable {
-    display: block;
-}
-
-
 nav a {
-    color: #F5F5F5;
+    color: var(--color-gris-claro);
     text-decoration: none;
-    font-family: "Oswald";
+    font-family: var(--fuente-titulo);
     font-weight: bold;
     text-transform: uppercase;
 }
@@ -120,11 +109,43 @@ nav a:hover {
     text-decoration: underline;
 }
 
+.desplegable {
+    display: none;
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    background: var(--color-negro);
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    min-width: 150px;
+    border-radius: var(--radio-borde);
+    box-shadow: var(--sombra-general);
+    z-index: 999;
+}
+.desplegable li {
+    padding: 5px 15px;
+}
+.desplegable li a {
+    color: var(--color-gris-claro);
+    text-decoration: none;
+    display: block;
+    font-family: var(--fuente-titulo);
+}
+.desplegable li a:hover {
+    background: var(--color-primario);
+    color: var(--color-blanco);
+    border-radius: 4px;
+}
+nav ul li:hover > .desplegable {
+    display: block;
+}
+
 body {
     margin: 0;
-    font-family: "Lato", sans-serif;
-    background: #F5F5F5;
-    color: #333333;
+    font-family: var(--fuente-texto);
+    background: var(--color-gris-claro);
+    color: var(--color-negro);
 }
 
 .container {
@@ -133,153 +154,135 @@ body {
     justify-content: space-evenly;
     padding: 1%;
 }
-
 .tarjeta {
     display: flex;
     flex-direction: column;
     align-items: center;
     max-width: 20%;
     min-width: 200px;
-    background: #fff;
+    background: var(--color-blanco);
     border-radius: 10px;
-    box-shadow: -10px 5px 10px lightgray;
-    margin: 20px;
+    box-shadow: var(--sombra-tarjeta);
+    margin: var(--margen-general);
     overflow: hidden;
     text-align: center;
 }
-
 .tarjeta-img {
     width: 100%;
     height: auto;
 }
 .tarjeta-contenido {
-    padding: 15px;
+    padding: var(--padding-general);
 }
-
 .tarjeta-titulo {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 10px;
 }
-
 .tarjeta-descripcion {
     font-size: 16px;
-    color: #333;
+    color: var(--color-negro);
     margin-bottom: 15px;
 }
-
 .tarjeta-boton {
-   background: #FF6600;
-    color: #FFF;
-    font-family: "Oswald-Bold";
-    font-size: 18px;
+    background: var(--color-primario);
+    color: var(--color-blanco);
+    font-family: var(--fuente-titulo-bold);
+    font-size: var(--font-size-boton);
     text-transform: uppercase;
     padding: 12px;
     border: none;
-    border-radius: 8px;
+    border-radius: var(--radio-borde);
     cursor: pointer;
     transition: all 0.3s ease;
 }
-
 .tarjeta-boton:hover {
-    background: #E55A00;
+    background: var(--color-primario-hover);
 }
-
 
 #contacto {
-    padding: 40px;
+    padding: calc(var(--padding-general) * 3);
     max-width: 700px;
-    margin: 40px auto;
-    background: #FFFFFF;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    margin: calc(var(--margen-general) * 2) auto;
+    background: var(--color-blanco);
+    border-radius: var(--radio-borde-grande);
+    box-shadow: var(--sombra-general);
 }
-
 #contacto h2 {
-    font-family: "Oswald", sans-serif;
-    font-size: 28px;
-    color: #FF6600;
-    margin-bottom: 20px;
+    font-family: var(--fuente-titulo);
+    font-size: var(--font-size-logo);
+    color: var(--color-primario);
+    margin-bottom: var(--margen-general);
     text-transform: uppercase;
 }
-
 #contacto form {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
-
 #contacto legend {
-    font-family: "Oswald-Bold";
+    font-family: var(--fuente-titulo-bold);
     font-size: 20px;
-    color: #333333;
+    color: var(--color-negro);
     margin-bottom: 15px;
 }
-
 #contacto label {
-    font-family: "Lato-Bold";
+    font-family: var(--fuente-texto-bold);
     font-size: 16px;
-    color: #333333;
+    color: var(--color-negro);
     margin-bottom: 5px;
 }
-
 #contacto input,
 #contacto textarea,
 #contacto select {
-    font-family: "Lato", sans-serif;
+    font-family: var(--fuente-texto);
     font-size: 15px;
     padding: 12px;
-    border: 1px solid #CCC;
-    border-radius: 6px;
+    border: 1px solid var(--color-gris-medio);
+    border-radius: var(--radio-borde);
     background: #F9F9F9;
-    color: #333333;
+    color: var(--color-negro);
     transition: all 0.3s ease;
     width: 100%;
     box-sizing: border-box;
 }
-
 #contacto input:focus,
 #contacto textarea:focus,
 #contacto select:focus {
-    border-color: #FF6600;
+    border-color: var(--color-primario);
     outline: none;
-    background: #FFF;
-    box-shadow: 0 0 6px rgba(255,102,0,0.4);
+    background: var(--color-blanco);
+    box-shadow: var(--sombra-hover);
 }
-
 #contacto button {
-    background: #FF6600;
-    color: #FFF;
-    font-family: "Oswald-Bold";
-    font-size: 18px;
+    background: var(--color-primario);
+    color: var(--color-blanco);
+    font-family: var(--fuente-titulo-bold);
+    font-size: var(--font-size-boton);
     text-transform: uppercase;
     padding: 12px;
     border: none;
-    border-radius: 8px;
+    border-radius: var(--radio-borde);
     cursor: pointer;
     transition: all 0.3s ease;
 }
-
 #contacto button:hover {
-    background: #E55A00;
+    background: var(--color-primario-hover);
 }
 
 input:focus, textarea:focus {
-  border: 2px solid orange;
+  border: 2px solid var(--color-primario);
   outline: none;
   background-color: #fffbea;
 }
-
 button:hover {
   background-color: darkorange;
   cursor: pointer;
 }
-
 input::placeholder, textarea::placeholder {
-  color: gray;
+  color: var(--color-gris-oscuro);
   font-style: italic;
 }
-
 label::after {
   content: " *";
   color: red;
