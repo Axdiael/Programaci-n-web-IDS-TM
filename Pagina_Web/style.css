@@ -283,7 +283,53 @@ input::placeholder, textarea::placeholder {
   color: var(--color-gris-oscuro);
   font-style: italic;
 }
-label::after {
+#contacto label::after {
   content: " *";
   color: red;
+}
+
+/*Apartado para vista enn movil*/
+
+.menu-btn {
+    display: none;
+    font-size: 26px;
+    color: var(--color-blanco);
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 220px;
+        height: 100%;
+        background: var(--color-negro);
+        padding-top: 70px;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 1000;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    nav ul li {
+        margin: 0;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .menu-toggle:checked ~ nav {
+        transform: translateX(0);
+    }
 }
