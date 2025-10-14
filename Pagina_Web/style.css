@@ -1,3 +1,7 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+
 :root {
     --color-primario: #FF6600;
     --color-primario-hover: #E55A00;
@@ -88,6 +92,42 @@ header .logo h1 {
     margin: 0;
 }
 
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 20 px;
+    margin-left: auto;
+}
+
+.search-btn,
+.user-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-btn:hover,
+.user-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.search-btn svg,
+.user-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+.search-toggle {
+    display: none;
+}
+
 nav ul {
     list-style: none;
     display: flex;
@@ -121,7 +161,7 @@ nav a:hover {
     min-width: 150px;
     border-radius: var(--radio-borde);
     box-shadow: var(--sombra-general);
-    z-index: 999;
+    z-index: 9999;
 }
 .desplegable li {
     padding: 5px 15px;
