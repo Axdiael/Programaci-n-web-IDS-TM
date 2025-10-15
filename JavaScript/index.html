@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora básica</title>
+</head>
+<body>
+    <h1>Calculadora JS</h1>
+    <script>
+
+        function calcular(numero1, numero2, operacion) {
+            let resultado;
+
+            if (operacion === "suma") {
+                resultado = numero1 + numero2;
+                console.log(`El resultado de la suma es: ${resultado}`);
+            } else if (operacion === "resta") {
+                resultado = numero1 - numero2;
+                console.log(`El resultado de la resta es: ${resultado}`);
+            } else if (operacion === "multiplicacion") {
+                resultado = numero1 * numero2;
+                console.log(`El resultado de la multiplicación es: ${resultado}`);
+            } else if (operacion === "division") {
+                if (numero2 === 0) {
+                    console.log("No se puede dividir por cero");
+                } else {
+                    resultado = numero1 / numero2;
+                    console.log(`El resultado de la división es: ${resultado}`);
+                }
+            } else {
+                console.log("Operación no valida");
+            }
+        }
+
+        let num1 = Number.parseFloat(prompt("Ingresa el primer número:"));
+        let num2 = Number.parseFloat(prompt("Ingresa el segundo número:"));
+        let operacion = prompt("Ingresa la operación (suma, resta, multiplicacion, division):").toLowerCase();
+
+        calcular(num1, num2, operacion);
+    </script>
+</body>
+</html>
