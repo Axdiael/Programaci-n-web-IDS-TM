@@ -21,9 +21,9 @@ Aquí estarán los ejercicios realizados en la materia de **Programación Web** 
 - [04: Examen Página web 14/10/2025)](/Pagina_Web/index.html)
 
 ### Ejercicios de Scripting
-[01: Ejercicio 1 - Calculadora 15/10/2025](/JavaScript/index.html)
-[02: Ejercicio 2 - Manipulación de estilos 18/10/2025](/Manipulacion_Estilos/index.html)
-Prox
+-[01: Ejercicio 1 - Calculadora 15/10/2025](/JavaScript/index.html)
+
+-[02: Ejercicio 2 - Manipulación de estilos 18/10/2025](/Manipulacion_Estilos/index.html)
 ### Ejercicios de Servidor
 
 ### Etapas del Proyecto Final
