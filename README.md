@@ -23,7 +23,7 @@ Aquí estarán los ejercicios realizados en la materia de **Programación Web** 
 ### Ejercicios de Scripting
 [01: Ejercicio 1 - Calculadora 15/10/2025](/JavaScript/index.html)
 [02: Ejercicio 2 - Manipulación de estilos 18/10/2025](/Manipulacion_Estilos/index.html)
-
+Prox
 ### Ejercicios de Servidor
 
 ### Etapas del Proyecto Final
