@@ -12,15 +12,15 @@ module.exports = {
     require("daisyui")
   ],
   
-  // Configuración opcional de DaisyUI
+ 
   daisyui: {
     themes: ["light", "dark", "cupcake", "forest", "luxury"], // temas que quieres usar
-    darkTheme: "dark", // tema por defecto para modo oscuro
-    base: true, // aplica estilos base
-    styled: true, // aplica estilos a los componentes
-    utils: true, // agrega utilidades de Tailwind
-    prefix: "", // prefijo para clases de DaisyUI
-    logs: true, // muestra info en consola
-    themeRoot: ":root", // elemento raíz para el tema
+    darkTheme: "dark", 
+    base: true, 
+    styled: true, 
+    utils: true, 
+    prefix: "", 
+    logs: true, 
+    themeRoot: ":root", 
   },
 }
