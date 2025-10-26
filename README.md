@@ -26,6 +26,9 @@ Aquí estarán los ejercicios realizados en la materia de **Programación Web** 
 -[02: Ejercicio 2 - Manipulación de estilos 18/10/2025](/Manipulacion_Estilos/index.html)
 
 -[03: Ejercicio 3 - Calculadora visual 23/10/2025](/Calculadora/index.html)
+
+-[04: Ejercicio 4 - Lista de tareas 26/10/2025](/Lista_Tareas/index.html)
+
 ### Ejercicios de Servidor
 
 ### Etapas del Proyecto Final
