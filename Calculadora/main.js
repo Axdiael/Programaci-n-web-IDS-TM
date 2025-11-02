@@ -1,3 +1,7 @@
+import { calcular } from './math.js';
+import { agregarAlHistorial } from './storage.js';
+import { actualizarDisplay, mostrarError, limpiarError } from './ui.js';
+
 const display = document.getElementById('display');
 const botonesContainer = document.getElementById('botones');
 const listaHistorial = document.getElementById('lista-historial');
@@ -34,7 +38,7 @@ document.addEventListener('keydown', function(e) {
 });
 
 function procesarEntrada(valor) {
-    limpiarError();
+    limpiarError(errorDiv);
     
     if(valor === 'C') {
         limpiarCalculadora();
@@ -59,13 +63,13 @@ function procesarEntrada(valor) {
 
 function agregarNumero(numero) {
     if(nuevoNumero) {
-        display.value = numero;
+        actualizarDisplay(display, numero);
         nuevoNumero = false;
     } else {
         if(display.value === '0') {
-            display.value = numero;
+            actualizarDisplay(display, numero);
         } else {
-            display.value += numero;
+            actualizarDisplay(display, display.value + numero);
         }
     }
 }
@@ -90,72 +94,29 @@ function calcularResultado() {
     const num2 = parseFloat(display.value);
     let resultado;
     
-    if(operadorActual === '/' && num2 === 0) {
-        mostrarError('Error: No se puede dividir por cero');
-        limpiarCalculadora();
-        return;
-    }
-    
-    switch(operadorActual) {
-        case '+':
-            resultado = num1 + num2;
-            break;
-        case '-':
-            resultado = num1 - num2;
-            break;
-        case '*':
-            resultado = num1 * num2;
-            break;
-        case '/':
-            resultado = num1 / num2;
-            break;
-        default:
-            mostrarError('Error: Operación no válida');
-            return;
-    }
-    
-    if(isNaN(resultado) || !isFinite(resultado)) {
-        mostrarError('Error: Resultado no válido');
+    try {
+        resultado = calcular(num1, num2, operadorActual);
+    } catch(error) {
+        mostrarError(errorDiv, 'Error: ' + error.message);
         limpiarCalculadora();
         return;
     }
     
     const operacionCompleta = operacionActual + display.value + ' = ' + resultado;
     
-    agregarAlHistorial(operacionCompleta);
+    agregarAlHistorial(operacionCompleta, listaHistorial);
     
-    display.value = resultado;
+    actualizarDisplay(display, resultado);
     operadorActual = '';
     valorAnterior = '';
     nuevoNumero = true;
     operacionActual = '';
-}
-
-function agregarAlHistorial(operacion) {
-    const item = document.createElement('div');
-    item.classList.add('item-historial');
-    item.textContent = operacion;
-    
-    if(listaHistorial.firstChild) {
-        listaHistorial.insertBefore(item, listaHistorial.firstChild);
-    } else {
-        listaHistorial.appendChild(item);
-    }
 }
 
 function limpiarCalculadora() {
-    display.value = '0';
+    actualizarDisplay(display, '0');
     operacionActual = '';
     operadorActual = '';
     valorAnterior = '';
     nuevoNumero = true;
-}
-
-function mostrarError(mensaje) {
-    errorDiv.textContent = mensaje;
-    setTimeout(limpiarError, 3000);
-}
-
-function limpiarError() {
-    errorDiv.textContent = '';
 }
