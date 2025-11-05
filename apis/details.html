@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Gato</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="back-button-container">
+        <a href="index.html" class="back-button">Volver a la galería</a>
+    </div>
+
+    <div id="detailsContainer">Cargando espere porfavr...</div>
+
+    <script type="module">
+        const breedId = new URLSearchParams(window.location.search).get('id');
+        console.log('Breed ID:', breedId);
+        
+        async function loadBreedDetails() {
+            if (!breedId) {
+                document.getElementById('detailsContainer').innerHTML = 
+                    '<p>No se encontró el ID de la raza</p>';
+                return;
+            }
+
+            try {
+                const apiUrl = `https://api.thecatapi.com/v1/images/${breedId}`;
+                console.log('Fetching:', apiUrl);
+                
+                const response = await fetch(apiUrl, {
+                    headers: {
+                        'x-api-key': 'live_BDs0X2RrM8BdOejeiHfPU06SiNOWsuFcWP5YidcAfvpTsQ8jj1WVU77LFg0N2V9M'
+                    }
+                });
+                
+                if (!response.ok) {
+                    throw new Error('Error en la respuesta: ' + response.status);
+                }
+                
+                const details = await response.json();
+                console.log('Details:', details);
+                
+                const breed = details.breeds && details.breeds[0];
+                
+                if (!breed) {
+                    document.getElementById('detailsContainer').innerHTML = 
+                        '<p>No se encontraron detalles de la raza</p>';
+                    return;
+                }
+
+                const detailsContainer = document.getElementById('detailsContainer');
+                detailsContainer.innerHTML = `
+                    <div class="cat-details">
+                        <img src="${details.url || 'https://via.placeholder.com/400'}" 
+                             alt="${breed.name || 'Gato'}">
+                        <div class="details-info">
+                            <h1>${breed.name || 'Nombre no disponible'}</h1>
+                            <p><strong>Origen:</strong> ${breed.origin || 'No disponible'}</p>
+                            <p><strong>Temperamento:</strong> ${breed.temperament || 'No disponible'}</p>
+                            <p><strong>Descripción:</strong> ${breed.description || 'No disponible'}</p>
+                            <p><strong>Esperanza de vida:</strong> ${breed.life_span || 'No disponible'} años</p>
+                            <p><strong>Peso:</strong> ${breed.weight?.metric || 'No disponible'} kg</p>
+                            <p><strong>Nivel de energía:</strong> ${breed.energy_level || 'No disponible'}/5</p>
+                            <p><strong>Sociabilidad:</strong> ${breed.social_needs || 'No disponible'}/5</p>
+                            ${breed.wikipedia_url ? 
+                                `<p><a href="${breed.wikipedia_url}" target="_blank" class="wiki-link">Ver en Wikipedia →</a></p>` 
+                                : ''}
+                        </div>
+                    </div>
+                `;
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('detailsContainer').innerHTML = 
+                    `<p>Error al cargar los detalles: ${error.message}</p>`;
+            }
+        }
+
+        loadBreedDetails();
+    </script>
+</body>
+</html>

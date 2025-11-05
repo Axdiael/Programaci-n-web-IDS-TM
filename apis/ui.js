@@ -1,0 +1,25 @@
+const catGrid = document.getElementById('catGrid');
+
+export function showBreeds(breeds){
+    catGrid.innerHTML = ''; 
+    breeds.forEach(breed => {
+        const catCard = document.createElement('div');
+        catCard.classList.add('cat-card');
+        catCard.innerHTML = `
+            <img src="${breed.image?.url || 'https://via.placeholder.com/150'}" alt="${breed.name}">
+            <h3>${breed.name}</h3>
+            <p>${breed.temperament || 'Temperamento no disponible'}</p>
+            <a class="see-details-button" href="details.html?id=${breed.reference_image_id}" target="_blank">Ver detalles</a>
+        `;
+        catGrid.appendChild(catCard);
+    });
+}
+
+export function updateButtons(currentPage, pageCount){
+    document.getElementById('prevPage').disabled = currentPage === 1;
+    document.getElementById('nextPage').disabled = pageCount <= currentPage;
+}
+export function updatePageInfo(currentPage, totalPages){
+    const pageInfo = document.getElementById('pageInfo');
+    pageInfo.textContent = `Página ${currentPage} de ${totalPages}`;
+}

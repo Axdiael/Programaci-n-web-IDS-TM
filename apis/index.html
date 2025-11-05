@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD con The Cat API</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Galería de Razas de Gatos</h1>
+    <div class="controls">
+        <label for="limitSelect">Gatos por página:</label>
+        <select id="limitSelect">
+            <option value="5" selected>5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+        </select>
+    </div>
+
+    <div id="catGrid"></div>
+
+    <div class="pagination">
+        <button id="prevPage" disabled>Anterior</button>
+         <span id="pageInfo"></span>
+        <button id="nextPage">Siguiente</button>
+    </div>
+
+    <script type="module" src="main.js"></script>
+</body>
